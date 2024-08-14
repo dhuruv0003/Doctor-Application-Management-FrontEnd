@@ -70,11 +70,18 @@ export const Departments = () => {
   return (
     <div className='container departments'>
       <h2>Departments</h2>
-      <Carousel responsive={responsive} removeArrowOnDeviceType={["medium", "small"]}>{
-        departmentsArray.map((depart,index)=>(
-          <Depart key={index} depart={depart}></Depart>
-        ))
-      }</Carousel>
+      <Carousel responsive={responsive}
+
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={3000}
+        customTransition="all .5"
+        transitionDuration={500}
+        removeArrowOnDeviceType={["medium", "small"]}>{
+          departmentsArray.map((depart, index) => (
+            <Depart key={index} depart={depart}></Depart>
+          ))
+        }</Carousel>
     </div>
   )
 }
