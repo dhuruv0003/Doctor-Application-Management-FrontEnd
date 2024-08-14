@@ -71,7 +71,6 @@ export const Departments = () => {
     <div className='container departments'>
       <h2>Departments</h2>
       <Carousel responsive={responsive}
-
         infinite={true}
         autoPlay={true}
         autoPlaySpeed={3000}
