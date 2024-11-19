@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { AppContext } from '../Context/AppContext'
 
 export const Navbar = () => {
-  const[show, setShow] = useState(false)
-  const {isAuthemticated}=useContext(AppContext); 
+  const [show, setShow] = useState(false)
+  const { isAuthenticated } = useContext(AppContext);
 
   return (
     <nav className='container'>
@@ -18,7 +18,14 @@ export const Navbar = () => {
           <Link to='/about'>About US</Link>
         </div>
         {
-           isAuthemticated?
+          isAuthenticated ? (
+            <button onClick={handleLogout}>
+              Logout
+            </button>)
+            : (
+              <button onclick={handleLogin}>
+                Login
+              </button>)
         }
       </div>
     </nav>

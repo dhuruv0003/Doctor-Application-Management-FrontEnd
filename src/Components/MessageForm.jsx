@@ -21,15 +21,15 @@ export const MessageForm = () => {
     const message = Message.current.value
 
     try {
-      await axios.post("http://localhost:5000/api/v1/message/send", {
+      await axios.post( "http://localhost:5000/api/v1/message/send", {
         FirstName, LastName, Email, Phone, message
       }).then((res) => {
         toast.success(res.data.message);
-        firstName.current.value=''
-        lastName.current.value=''
-        email.current.value=''
-        phone.current.value=''
-        Message.current.value=''
+        firstName.current.value = ''
+        lastName.current.value = ''
+        email.current.value = ''
+        phone.current.value = ''
+        Message.current.value = ''
 
       })
 
