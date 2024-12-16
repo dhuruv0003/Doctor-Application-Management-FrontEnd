@@ -30,7 +30,6 @@ export const MessageForm = () => {
         email.current.value = ''
         phone.current.value = ''
         Message.current.value = ''
-
       })
 
       // Optionally show success message

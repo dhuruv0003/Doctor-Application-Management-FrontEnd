@@ -6,23 +6,23 @@ import toast from 'react-hot-toast'
 
 export const Navbar = () => {
   const [show, setShow] = useState(false)
-  const { isAuthenticated,setIsAuthenticated } = useContext(AppContext);
+  const { isAuthenticated, setIsAuthenticated } = useContext(AppContext);
 
-  const handleLogout=async()=>{
-    await axios.get('http://localhost:4000/api/v1/user/patient/logout',{
-      withCredentials:true,
-    }).then(res=>{
+  const handleLogout = async () => {
+    await axios.get('http://localhost:4000/api/v1/user/patient/logout', {
+      withCredentials: true,
+    }).then(res => {
       toast.success(res.data.message)
       setIsAuthenticated(true)
     })
-    .catch(err=>{
-      toast.error(err.response.data.message)
-    })
+      .catch(err => {
+        toast.error(err.response.data.message)
+      })
   }
 
-  const navigate=useNavigate()
+  const navigate = useNavigate()
 
-  const handleLogin=()=>{
+  const handleLogin = () => {
     navigate('/login')
   }
 
@@ -31,7 +31,7 @@ export const Navbar = () => {
       <div className="logo">
         HelloCare
       </div>
-      <div className={show ? "navlinks showmenu" : "navlinks"}>
+      <div className={show ? "navLinks showmenu" : "navLinks"}>
         <div className="links">
           <Link to='/'>Home</Link>
           <Link to='/appointment'>AppointMent</Link>
@@ -39,11 +39,11 @@ export const Navbar = () => {
         </div>
         {
           isAuthenticated ? (
-            <button onClick={handleLogout}>
+            <button className='logoutBtn btn' onClick={handleLogout}>
               Logout
             </button>)
             : (
-              <button onclick={handleLogin}>
+              <button className='logoutBtn btn'    onClick={handleLogin}>
                 Login
               </button>)
         }

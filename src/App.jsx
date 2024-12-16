@@ -10,6 +10,8 @@ import { Navbar } from './Components/Navbar'
 
 function App() {
 
+  const {isAuthenticated,setIsAuthenticted,setUser}=useConte
+
   return (
     <>
       <Navbar />
